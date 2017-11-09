@@ -1,0 +1,6 @@
+web:
+  build: .
+  ports:
+    - "80:80"
+  volumes:
+    - /Users/miguel/Desktop/test/docker-apache-php-oracle/sample:/var/www/html
