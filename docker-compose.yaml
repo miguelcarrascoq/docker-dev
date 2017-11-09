@@ -3,5 +3,5 @@ web:
   ports:
     - "80:80"
   volumes:
-    - /Users/miguel/Desktop/test/docker-dev/sample:/var/www/html
+    - /Volumes/miguel/Documents/PROYECTOS/Apelación/Miguel/repos/docker-dev/dev/byc-mineduc01-ges/app/nmod/:/var/www/html
   container_name: dev-env
