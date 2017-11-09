@@ -4,3 +4,4 @@ web:
     - "80:80"
   volumes:
     - /Users/miguel/Desktop/test/docker-dev/sample:/var/www/html
+  container_name: dev-env
