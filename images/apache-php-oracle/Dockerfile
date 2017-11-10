@@ -4,16 +4,31 @@ RUN apt-get update
 RUN apt-get -y upgrade
 
 # Install Apache2 / PHP 5.6 & Co.
-RUN apt-get -y install apache2 php5 libapache2-mod-php5 php5-dev php-pear php5-curl curl libaio1
+RUN apt-get -y install apache2 php5 libapache2-mod-php5 php5-dev php-pear php5-curl curl libaio1 vim
+# RUN apt-get -y install mysqli
+# RUN apt-get -y install mysqlnd
+# RUN apt-get -y install mysql
+# RUN apt-get -y install pdo
+# RUN apt-get -y install pdo_mysql
+# RUN apt-get -y install pdo_pgsql
 
 # Install the Oracle Instant Client
-ADD oracle/oracle-instantclient12.1-basic_12.1.0.2.0-2_amd64.deb /tmp
-ADD oracle/oracle-instantclient12.1-devel_12.1.0.2.0-2_amd64.deb /tmp
-ADD oracle/oracle-instantclient12.1-sqlplus_12.1.0.2.0-2_amd64.deb /tmp
+ADD to-copy/oracle/oracle-instantclient12.1-basic_12.1.0.2.0-2_amd64.deb /tmp
+ADD to-copy/oracle/oracle-instantclient12.1-devel_12.1.0.2.0-2_amd64.deb /tmp
+ADD to-copy/oracle/oracle-instantclient12.1-sqlplus_12.1.0.2.0-2_amd64.deb /tmp
 RUN dpkg -i /tmp/oracle-instantclient12.1-basic_12.1.0.2.0-2_amd64.deb
 RUN dpkg -i /tmp/oracle-instantclient12.1-devel_12.1.0.2.0-2_amd64.deb
 RUN dpkg -i /tmp/oracle-instantclient12.1-sqlplus_12.1.0.2.0-2_amd64.deb
 RUN rm -rf /tmp/oracle-instantclient12.1-*.deb
+
+# Copy HTTP server config
+COPY to-copy/000-default.conf /etc/apache2/sites-available/
+
+RUN mkdir /var/www/html/web
+COPY to-copy/sample/* /var/www/html/web
+
+RUN echo "# run dev.local in the browser" >> /etc/hosts
+RUN echo "127.0.0.1 dev.local" >> /etc/hosts
 
 # Set up the Oracle environment variables
 ENV LD_LIBRARY_PATH /usr/lib/oracle/12.1/client64/lib/

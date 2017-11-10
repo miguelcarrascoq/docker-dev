@@ -1,0 +1,7 @@
+web:
+  build: .
+  ports:
+    - "80:80"
+  volumes:
+    - /Volumes/miguel/Docker/htdocs:/var/www/html
+  container_name: dev-env
