@@ -27,9 +27,6 @@ COPY to-copy/000-default.conf /etc/apache2/sites-available/
 RUN mkdir /var/www/html/web
 COPY to-copy/sample/* /var/www/html/web
 
-RUN echo "# run dev.local in the browser" >> /etc/hosts
-RUN echo "127.0.0.1 dev.local" >> /etc/hosts
-
 # Set up the Oracle environment variables
 ENV LD_LIBRARY_PATH /usr/lib/oracle/12.1/client64/lib/
 ENV ORACLE_HOME /usr/lib/oracle/12.1/client64/lib/
