@@ -5,12 +5,6 @@ RUN apt-get -y upgrade
 
 # Install Apache2 / PHP 5.6 & Co.
 RUN apt-get -y install apache2 php5 libapache2-mod-php5 php5-dev php-pear php5-curl curl libaio1 vim
-# RUN apt-get -y install mysqli
-# RUN apt-get -y install mysqlnd
-# RUN apt-get -y install mysql
-# RUN apt-get -y install pdo
-# RUN apt-get -y install pdo_mysql
-# RUN apt-get -y install pdo_pgsql
 
 # Install the Oracle Instant Client
 ADD to-copy/oracle/oracle-instantclient12.1-basic_12.1.0.2.0-2_amd64.deb /tmp
