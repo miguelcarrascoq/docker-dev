@@ -6,7 +6,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - /Volumes/miguel/Docker/htdocs:/var/www/html
+      - /Volumes/miguel/Docker/htdocs:/var/www/html/web
     container_name: dev-env
     
   db:
