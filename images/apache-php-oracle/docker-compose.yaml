@@ -8,13 +8,13 @@ services:
     links: 
       - db
     volumes:
-      - $PWD/www:/var/www/html/web
+      - ../../www:/var/www/html/web
     container_name: dev-env
     
   db:
     image: mysql:5.7
     volumes:
-      - $PWD/db_data:/var/lib/mysql
+      - ../../db_data:/var/lib/mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: example
