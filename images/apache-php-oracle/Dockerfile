@@ -19,6 +19,8 @@ RUN rm -rf /tmp/oracle-instantclient12.1-*.deb
 COPY to-copy/000-default.conf /etc/apache2/sites-available/
 
 RUN mkdir /var/www/html/web
+RUN mkdir $HOME/www
+RUN mkdir $HOME/db_data
 # COPY to-copy/sample/* /var/www/html/web
 COPY to-copy/sample/* $PWD
 
