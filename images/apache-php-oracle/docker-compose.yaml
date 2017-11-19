@@ -8,7 +8,7 @@ services:
     links: 
       - db
     volumes:
-      - $PWD/www:/var/www/html/web
+      - ../../www:/var/www/html/web
     container_name: dev-env
     
   db:
@@ -16,10 +16,11 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - $PWD/db_data:/var/lib/mysql
+      - ../../db_data:/var/lib/mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: example
       MYSQL_DATABASE: dbname
       MYSQL_USER: dbuser
       MYSQL_PASSWORD: dbpass
+    container_name: mysql
