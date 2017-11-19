@@ -5,7 +5,8 @@ services:
     build: .
     ports:
       - "80:80"
-    links: db
+    links: 
+      - db
     volumes:
       - $PWD/www:/var/www/html/web
     container_name: dev-env
