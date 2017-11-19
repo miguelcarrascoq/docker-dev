@@ -5,14 +5,15 @@ services:
     build: .
     ports:
       - "80:80"
+    links: db
     volumes:
-      - /Volumes/miguel/Docker/htdocs:/var/www/html/web
+      - $PWD/www:/var/www/html/web
     container_name: dev-env
     
   db:
     image: mysql:5.7
     volumes:
-      - /Volumes/miguel/Docker/db_data:/var/lib/mysql
+      - $PWD/db_data:/var/lib/mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: example
