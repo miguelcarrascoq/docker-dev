@@ -19,7 +19,8 @@ RUN rm -rf /tmp/oracle-instantclient12.1-*.deb
 COPY to-copy/000-default.conf /etc/apache2/sites-available/
 
 RUN mkdir /var/www/html/web
-COPY to-copy/sample/* /var/www/html/web
+# COPY to-copy/sample/* /var/www/html/web
+COPY to-copy/sample/* $PWD
 
 # Set up the Oracle environment variables
 ENV LD_LIBRARY_PATH /usr/lib/oracle/12.1/client64/lib/
