@@ -8,15 +8,16 @@ services:
     links: 
       - db
     volumes:
-      - /home/miguel/www:/var/www/html/web
+      - /Applications/XAMPP/xamppfiles/htdocs/byc-mineduc01-ges:/var/www/html/web
+      - /Applications/XAMPP/xamppfiles/htdocs/byc-mineduc01-ges/app:/var/www/html/web/app
     container_name: dev-env
     
   db:
-    image: mysql:5.7
+    image: mysql:5.6
     ports:
       - 3306:3306
     volumes:
-      - /home/miguel/db_data:/var/lib/mysql
+      - /Applications/XAMPP/xamppfiles/htdocs/test/db_data:/var/lib/mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: example
