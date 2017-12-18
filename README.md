@@ -29,7 +29,7 @@ cd docker-dev
 cd images/apache-php-oracle/
 docker build -t miguelcarrascoq/docker-dev .
 
-docker-compose up -d
+sudo docker-compose up -d
 ```
 
 ### Build MySQL
@@ -40,6 +40,11 @@ docker build -t miguelcarrascoq/php-mysql .
 docker run --name php-mysql -v "$PWD/":/var/www/html miguelcarrascoq/php-mysql
 ```
 
+And then, you can use some MySQL DB client like "Sequel Pro" to manage the DB using this data:
+- host: 127.0.0.1
+- user: root
+- pass: example
+
 ### Enter to bash
 ```
 docker exec -it dev-env bash
@@ -47,3 +52,16 @@ docker exec -it dev-env bash
 
 ### Run the server
 Go to http://localhost
+
+### Other commands
+```
+docker ps
+docker stop dev-env
+```
+
+### OSX Hosts config. In /etc/hosts add
+```
+127.0.0.1       localhost
+127.0.0.1       sbyc.byc.local
+```
+
