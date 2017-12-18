@@ -1,10 +1,9 @@
+```
 docker build -t miguelcarrascoq/tide-dev .
-# docker run -p 80:80 -p 443:443 -d -v /Applications/XAMPP/xamppfiles/htdocs/byc-mineduc01-ges:/var/www/html miguelcarrascoq/tide-dev
 sudo docker-compose up -d
 docker exec -it tide-dev-env bash
-
-
-
+```
+# docker run -p 80:80 -p 443:443 -d -v /Applications/XAMPP/xamppfiles/htdocs/byc-mineduc01-ges:/var/www/html miguelcarrascoq/tide-dev
 
 
 This is a simple Apache image, including PHP and SSL support. In order to use this image effectively, you'll need to mount:
