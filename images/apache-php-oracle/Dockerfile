@@ -17,8 +17,9 @@ RUN apt-get -y install php5-ldap
 RUN apt-get -y install php5-mysql
 RUN apt-get -y install php5-pgsql
 RUN apt-get -y install php5-cgi
+RUN apt-get -y install php5-dev
 # RUN apt-get -y install php5-pdo (no funciona)
-      
+
 # Install the Oracle Instant Client
 ADD to-copy/oracle/oracle-instantclient12.1-basic_12.1.0.2.0-2_amd64.deb /tmp
 ADD to-copy/oracle/oracle-instantclient12.1-devel_12.1.0.2.0-2_amd64.deb /tmp
